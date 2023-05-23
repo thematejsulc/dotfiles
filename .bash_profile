@@ -14,6 +14,7 @@
 # @license		Licensed under the MIT license.
 
 # Split up the bash file for better maintainability
+source ~/.bashrc
 source ~/.bash_prompt
 source ~/.bash_aliases
 
