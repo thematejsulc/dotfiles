@@ -1,0 +1,32 @@
+# .bash_prompt
+#
+# LICENSE NOTICE
+# This configuration is provided as-is, without any warranty or support.
+# You may use any modify it as you see fir, but I am not responsible for any
+# damage or loss caused by its use.
+#
+# DISCLAIMER
+# This is a living resource and will be sure to change over time to meet the
+# needs of its use.
+#
+# @author		Matej Šulc
+# @copyright	Copyright (c) 2023 Matej Šulc.
+# @license		Licensed under the MIT license.
+
+#!/usr/bin/env bash
+
+# Git Functions
+git_branch() {
+	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# Terminal Prompt
+PS1="\[\e[0;93m\]\u\[\e[m\]"				# username
+PS1+=" "									# space
+PS1+="\[\e[0;95m\]\W\[\e[m\]"				# current directory
+PS1+="\[\e[0;92m\]\$(git_branch)\[\e[m\]"   # current branch
+PS1+=" "									# space
+export PS1;
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
