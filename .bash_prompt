@@ -1,15 +1,24 @@
-# Git Functions
+# Function to retrieve the current Git branch
 git_branch() {
 	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-# Terminal Prompt
+# Error handling for the Git branch function
+if ! type "git" > /dev/null 2>&1; then
+echo "Git is not installed. Please install Git to enable the Git branch feature."
+fi
+
+# Configure the Terminal Prompt
+# Format: Username | Current Directory | Current Branch
 PS1="\[\e[0;93m\]\u\[\e[m\]" # Username string
 PS1+=" " # Space
 PS1+="\[\e[0;95m\]\W\[\e[m\]" # Current directory
 PS1+="\[\e[0;92m\]\$(git_branch)\[\e[m\]" # Current branch
 PS1+=" " # Space
-export PS1;
+
+# Export the Terminal Prompt and enable colorized output
+export PS1
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
 
