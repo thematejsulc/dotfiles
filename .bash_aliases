@@ -1,20 +1,3 @@
-# .bash_aliases
-#
-# LICENSE NOTICE
-# This configuration is provided as-is, without any warranty or support.
-# You may use and modify it as you see fit, but I am not responsible for any
-# damage or loss caused by its use.
-#
-# DISCLAIMER
-# This is a living resource and will be sure to change over time to meet the
-# needs of its use.
-#
-# @author		Matej Šulc
-# @copyright	Copyright (c) 2023 Matej Šulc.
-# @license		Licensed under the MIT license.
-
-#!/usr/bin/env bash
-
 # Navigation 
 alias ..="cd .."
 alias ...="cd ../.."
